@@ -1,8 +1,9 @@
-name: Build Electron App
+name: Build EXE
 
 on:
   push:
     branches:
+      - principal
       - main
 
 jobs:
@@ -21,6 +22,9 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Build React
+        run: npm run build
+
       - name: Build EXE
         run: npx electron-builder --win
 
@@ -28,4 +32,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: SmartLogistic-EXE
-          path: dist/*.exe
+          path: release/*.exe
