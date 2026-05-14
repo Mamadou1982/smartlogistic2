@@ -1,17 +1,29 @@
 {
   "name": "smartlogistic2",
-  "private": true,
   "version": "1.0.0",
+  "private": true,
   "main": "electron.js",
-  "type": "module",
 
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview",
-    "electron": "electron .",
-    "electron-dev": "concurrently \"vite\" \"wait-on http://localhost:5173 && electron .\"",
     "electron-build": "npm run build && electron-builder"
+  },
+
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "framer-motion": "^11.0.0"
+  },
+
+  "devDependencies": {
+    "vite": "^5.2.0",
+    "@vitejs/plugin-react": "^4.2.0",
+    "electron": "^30.0.0",
+    "electron-builder": "^24.13.3",
+    "tailwindcss": "^3.4.3",
+    "postcss": "^8.4.38",
+    "autoprefixer": "^10.4.19"
   },
 
   "build": {
@@ -22,30 +34,10 @@
     },
     "files": [
       "dist/**/*",
-      "electron.js",
-      "package.json"
+      "electron.js"
     ],
     "win": {
-      "target": "nsis",
-      "icon": "public/favicon.ico"
+      "target": "nsis"
     }
-  },
-
-  "dependencies": {
-    "framer-motion": "^11.0.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
-  },
-
-  "devDependencies": {
-    "@vitejs/plugin-react": "^4.2.0",
-    "autoprefixer": "^10.4.19",
-    "concurrently": "^8.2.2",
-    "electron": "^30.0.0",
-    "electron-builder": "^24.13.3",
-    "postcss": "^8.4.38",
-    "tailwindcss": "^3.4.3",
-    "vite": "^5.2.0",
-    "wait-on": "^7.2.0"
   }
 }
