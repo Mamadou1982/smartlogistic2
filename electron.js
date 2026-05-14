@@ -1,5 +1,5 @@
-const { app, BrowserWindow } = require('electron');
-const path = require('path');
+const { app, BrowserWindow } = require("electron");
+const path = require("path");
 
 function createWindow() {
   const win = new BrowserWindow({
@@ -11,7 +11,7 @@ function createWindow() {
     },
   });
 
-  win.loadFile('dist/index.html');
+  win.loadFile(path.join(__dirname, "dist/index.html"));
 }
 
 app.whenReady().then(() => {
